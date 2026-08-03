@@ -138,7 +138,7 @@ if __name__ == "__main__":
 
 ### How to Run the Test:
 1. Ensure your environment is active: `source .venv/bin/activate`
-2. Ensure your keys are loaded using either **Method A** or **Method B**.
+2. Ensure your keys are loaded using as per the AWS Authentication Configuration.
 3. Run the script:
    ```bash
    python3 test_aws.py
