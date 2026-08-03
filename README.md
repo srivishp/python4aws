@@ -1,6 +1,6 @@
 # Python for AWS Workspace (`python4aws`) 🚀
 
-Welcome to the **python4aws** educational repository! This workspace is designed to help you learn cloud automation using Python and the official AWS SDK (`boto3`) inside **WSL (Windows Subsystem for Linux)**.
+This is the **python4aws** repository. This workspace is designed to help you learn cloud automation using Python, AWS CLI and the official AWS SDK (`boto3`) inside **WSL (Windows Subsystem for Linux)**.
 
 This repository contains hands-on practice directories, utility scripts, and an isolated configuration workflow designed for completely safe, local cloud development.
 
@@ -56,28 +56,18 @@ pip install boto3
 
 ## 🔑 AWS Authentication Configuration
 
-To prevent accidentally storing permanent keys on your machine, choose one of these two developer-friendly methods to authenticate your scripts.
+To grant your Python scripts access to the AWS cloud, you need to configure your local credentials. Follow these steps to map them cleanly into your environment:
 
-### Method A: Temporary Environment Variables (Recommended for Learning)
-Paste your keys directly into your active terminal. They will work instantly but will automatically disappear when you close your terminal window for perfect security:
+### Step 1: Initialize Your Workspace Keys
+Inside your `python4aws` folder, run the configuration tool to store your access keys securely:
 ```bash
-export AWS_ACCESS_KEY_ID="your_access_key_here"
-export AWS_SECRET_ACCESS_KEY="your_secret_access_key_here"
-export AWS_DEFAULT_REGION="us-east-1"
-```
-
-### Method B: Install the Official AWS CLI v2
-If you want to configure your keys permanently inside WSL using the `aws configure` command, install the official standalone AWS package:
-```bash
-# Download and install the official AWS package
-curl "https://amazonaws.com" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-rm -rf awscliv2.zip aws/
-
-# Configure your permanent workspace credentials
 aws configure
 ```
+You will be prompted to provide your **AWS Access Key ID**, **AWS Secret Access Key**, and **Default region name** (e.g., `us-east-1`). 
+
+### Step 2: Verification
+The configuration values are securely stored inside your local configuration profile directory. Your `boto3` script will automatically locate and parse these files every time you execute your code.
+
 
 ---
 
