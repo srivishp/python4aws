@@ -53,6 +53,25 @@ pip install boto3
 ```
 
 ---
+## AWS CLI v2 Installation (WSL)
+
+Run the following commands to install the latest official AWS CLI v2 inside your WSL terminal:
+
+```bash
+# Install unzip dependencies
+sudo apt update && sudo apt install -y unzip curl
+
+# Download and run the official installer
+curl "https://amazonaws.com" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+# Verify installation
+aws --version
+
+# Clean up installer files
+rm -rf awscliv2.zip ./aws
+```
 
 ## 🔑 AWS Authentication Configuration
 
