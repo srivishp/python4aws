@@ -17,7 +17,16 @@ python4aws/
 ```
 
 ---
+## 🪟 Windows + WSL Prerequisites
 
+Before you start the Python setup, complete the following Windows-side steps:
+
+1. Open the Microsoft Store and install **Ubuntu**.
+2. Open **Control Panel** -> **Programs** -> **Turn Windows features on or off** and make sure the **Windows Subsystem for Linux** checkbox is selected.
+3. Open **VS Code**, install the **WSL** extension, and use the extension to open this repository inside your Ubuntu environment.
+
+> This ensures your development environment is running inside a proper WSL Linux shell rather than directly on Windows.
+---
 ## 🛠️ Step-by-Step Setup Guide
 
 Follow these exact steps to replicate this workspace on any new computer running WSL (Ubuntu).
@@ -82,7 +91,7 @@ Inside your `python4aws` folder, run the configuration tool to store your access
 ```bash
 aws configure
 ```
-You will be prompted to provide your **AWS Access Key ID**, **AWS Secret Access Key**, and **Default region name** (e.g., `us-east-1`). 
+You will be prompted to provide your **AWS Access Key ID**, **AWS Secret Access Key**, and **Default region name** (e.g., `us-east-1`).
 
 ### Step 2: Verification
 The configuration values are securely stored inside your local configuration profile directory. Your `boto3` script will automatically locate and parse these files every time you execute your code.
