@@ -1,0 +1,11 @@
+Transform: AWS::Serverless-2016-10-31
+Resources:
+## Logical ID must not contain hyphers or underscores, only alphanumeric is allowed hence we are separately mentioning FunctionName in properties.
+# If function name is purely alphanumeric we do not need the FunctionName in Properties
+    SamplePython4awsFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        FunctionName: sample-python4aws-function
+        Handler: lambda_function.lambda_handler
+        Runtime: python3.14
+        CodeUri: .
